@@ -63,7 +63,15 @@ type DeviceStatus struct {
 	// Optional: Define how frequent mapper will report the device status.
 	// +optional
 	ReportCycle int64 `json:"reportCycle,omitempty"`
+	// Optional: The status of the device (e.g., online, offline)
+	// +optional
+	Status string `json:"status,omitempty"`
 }
+
+const (
+	DeviceStatusOnline  = "online"
+	DeviceStatusOffline = "offline"
+)
 
 // Twin provides a logical representation of control properties (writable properties in the
 // device model). The properties can have a Desired state and a Reported state. The cloud configures
